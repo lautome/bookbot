@@ -1,11 +1,19 @@
+import sys
 from stats import *
+
 def get_book_text(filepath):
     with open(filepath) as f:
         string = f.read()
         return string
 
+def check_argv(list):
+    if len(list) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
 def main():
-    filepath = "books/frankenstein.txt"
+    check_argv(sys.argv)
+    filepath = sys.argv[1]
     filecontent = get_book_text(filepath)
 
     print("============ BOOKBOT ============")

@@ -26,6 +26,7 @@ def get_ordered_letters(dict):
     for nd in new_dict:
         x = {"char": nd, "num": new_dict[nd]}
         list_of_dictionaries.append(x)
+
     # sort() is keyword-only, thus get_value() is needed
     list_of_dictionaries.sort(key=get_value, reverse=True)
 
