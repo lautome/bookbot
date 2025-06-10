@@ -5,9 +5,15 @@ def get_book_text(filepath):
         return string
 
 def main():
-    filecontent = get_book_text("books/frankenstein.txt")
-    print(f"{get_words_count(filecontent)} words found in the document")
-    tt = get_letters_count(filecontent)
-    print(tt)
+    filepath = "books/frankenstein.txt"
+    filecontent = get_book_text(filepath)
+
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {filepath}...")
+    print("----------- Word Count ----------")
+    print(f"Found {get_words_count(filecontent)} total words")
+    print("--------- Character Count -------")
+    get_ordered_letters(get_letters_count(filecontent))
+    print("============= END ===============")
 
 main()
